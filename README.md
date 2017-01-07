@@ -2,7 +2,7 @@
 
 A test web application using Phoenix and Elixir to rate people photos.
 
-![Screenshot](screenshot.jpg)
+![Screenshot](Screenshot.jpg)
 
 To start:
 
