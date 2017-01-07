@@ -1,0 +1,23 @@
+<div class="jumbotron">
+  <h2><%= gettext "Hello this is %{name}", name: @user.name %></h2>
+  <div id="picture">
+	<%= img_tag(@user.photo) %>
+  </div>
+  <div id="bio">
+     <p> Average vote: <%= @vote %> </p>
+     <p> <%= @user.bio %> </p> 
+  </div>
+
+  <div>
+  <%= form_for @changeset, page_path(@conn, :vote), fn f -> %>
+      <%= select f, :vote, 1..5 %>
+     <%= hidden_input f, :user_id, value: @user.id %>
+      <%= submit "Vote", class: "btn btn-primary" %>
+  <% end %>
+  </div>
+  
+  <div>
+  <%= button("Next", to: page_path(@conn, :index), method: "get", class: "btn btn-success") %>
+  </div>
+
+</div>
